@@ -44,7 +44,7 @@ function datcontact_standard_settings_page() {
                 <div class="el-col el-col-24 el-col-sm-24 el-col-md-10" style="padding-left: 10px; padding-right: 10px;">
                     <div class="fss_content_box fss_box_action fss_box_active" style="margin-bottom: 0px;">
                         <div class="fss_header">
-                            Cài đặt Chung
+                            CÀI ĐẶT CHUNG
                         </div>
                         <div class="fss_content">
                             <div class="fss_general_settings">
