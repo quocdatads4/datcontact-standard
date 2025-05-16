@@ -69,8 +69,8 @@ function datcontact_standard_settings_page() {
 <?php
 }
 
-// Enqueue styles
-function datcontact_standard_enqueue_styles() {
+// Enqueue frontend styles
+function datcontact_standard_enqueue_frontend_styles() {
     wp_enqueue_style(
         'datcontact-standard-style',
         plugin_dir_url(__FILE__) . 'css/datcontact-standard-styles.css',
@@ -78,7 +78,18 @@ function datcontact_standard_enqueue_styles() {
         '1.0' // Version number
     );
 }
-add_action('wp_enqueue_scripts', 'datcontact_standard_enqueue_styles');
+add_action('wp_enqueue_scripts', 'datcontact_standard_enqueue_frontend_styles');
+
+// Enqueue admin styles
+function datcontact_standard_enqueue_admin_styles() {
+    wp_enqueue_style(
+        'datcontact-standard-admin-style',
+        plugin_dir_url(__FILE__) . 'admin/datcontact-admin-styles.css',
+        array(),
+        '1.0' // Version number
+    );
+}
+add_action('admin_enqueue_scripts', 'datcontact_standard_enqueue_admin_styles');
 
 // Add button contact bar to the front-end
 add_action('wp_footer', 'datcontact_standard_button_contact_bar');
@@ -89,6 +100,7 @@ function datcontact_standard_button_contact_bar() {
     $link_phone = esc_url(get_option('link_phone_standard'));
     $link_messenger = esc_url(get_option('link_messenger_standard'));
     $link_sms = esc_url(get_option('link_sms_standard'));
+    $plugin_url = plugin_dir_url(__FILE__) . 'assets/icons/';
 ?>
     <div class="giuseart-nav">
         <ul>
